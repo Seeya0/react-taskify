@@ -18,3 +18,10 @@ export interface todoListType {
   setCompletedTodos: React.Dispatch<React.SetStateAction<Array<TodoType>>>;
   completedTodos: Array<TodoType>;
 }
+
+export interface singleTodoType {
+  index: number;
+  todo: TodoType;
+  todos: Array<TodoType>;
+  setTodos: React.Dispatch<React.SetStateAction<Array<TodoType>>>;
+}
