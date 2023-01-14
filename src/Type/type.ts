@@ -11,3 +11,10 @@ export interface inputFieldPropsType {
   setTodo: React.Dispatch<React.SetStateAction<string>>;
   handleAdd: (e: React.FormEvent) => void;
 }
+
+export interface todoListType {
+  todos: Array<TodoType>;
+  setTodos: React.Dispatch<React.SetStateAction<Array<TodoType>>>;
+  setCompletedTodos: React.Dispatch<React.SetStateAction<Array<TodoType>>>;
+  completedTodos: Array<TodoType>;
+}
