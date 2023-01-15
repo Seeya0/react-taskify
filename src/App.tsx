@@ -5,6 +5,7 @@ import InputField from './components/InputField';
 import TodoList from './components/TodoList';
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import { Route, Routes } from 'react-router-dom';
+import GlassPage from './components/GlassPage';
 
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>('');
@@ -75,7 +76,7 @@ const App: React.FC = () => {
       </DragDropContext>}>
       </Route>
 
-      <Route path='/glass' element={<h1>glass test</h1>}>
+      <Route path='/glass' element={<GlassPage />}>
       </Route>
     </Routes>
   );
