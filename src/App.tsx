@@ -4,6 +4,7 @@ import "./App.css";
 import InputField from './components/InputField';
 import TodoList from './components/TodoList';
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
+import { Route, Routes } from 'react-router-dom';
 
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>('');
@@ -59,18 +60,24 @@ const App: React.FC = () => {
 
 
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <div className='App'>
-        <p className='heading'>Task Handler!?</p>
-        <InputField todo={todo} setTodo={setTodo} handleAdd={addTodo} />
-        <TodoList
-          todos={todos}
-          setTodos={setTodos}
-          completedTodos={completedTodos}
-          setCompletedTodos={setCompletedTodos}
-        />
-      </div>
-    </DragDropContext>
+    <Routes>
+      <Route path='/' element={<DragDropContext onDragEnd={onDragEnd}>
+        <div className='App'>
+          <p className='heading'>Task Handler!?</p>
+          <InputField todo={todo} setTodo={setTodo} handleAdd={addTodo} />
+          <TodoList
+            todos={todos}
+            setTodos={setTodos}
+            completedTodos={completedTodos}
+            setCompletedTodos={setCompletedTodos}
+          />
+        </div>
+      </DragDropContext>}>
+      </Route>
+
+      <Route path='/glass' element={<h1>glass test</h1>}>
+      </Route>
+    </Routes>
   );
 };
 
